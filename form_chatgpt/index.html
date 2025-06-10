@@ -3,27 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Complete Doctor Registration Form</title>
+  <title>Soldier Registration Form</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e5e7eb;
+      margin: 0;
       padding: 2rem;
+      display: flex;
+      justify-content: center;
     }
 
     .form-container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
+      background: #fff;
       padding: 2rem;
       border-radius: 12px;
+      max-width: 700px;
+      width: 100%;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       text-align: center;
       margin-bottom: 1.5rem;
-      color: #333;
+      color: #1f2937;
+    }
+
+    fieldset {
+      border: 2px solid #d1d5db;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #111827;
+      padding: 0 10px;
     }
 
     .form-group {
@@ -32,151 +52,151 @@
 
     label {
       display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #374151;
     }
 
     input, select, textarea {
       width: 100%;
       padding: 0.7rem;
-      border: 1px solid #ccc;
+      border: 1px solid #cbd5e1;
       border-radius: 8px;
       font-size: 1rem;
+      background-color: #f9fafb;
     }
 
-    input[type="checkbox"],
-    input[type="radio"] {
+    input[type="checkbox"] {
       width: auto;
       margin-right: 0.5rem;
     }
 
-    .inline-group {
+    .checkbox-group label {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-weight: normal;
     }
 
     button {
-      background-color: #1d4ed8;
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #2563eb;
       color: white;
-      padding: 0.8rem;
-      font-size: 1rem;
       border: none;
       border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      width: 100%;
+      margin-top: 1rem;
     }
 
     button:hover {
-      background-color: #2563eb;
+      background-color: #1d4ed8;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="form-container">
-    <h2>Complete Doctor Registration</h2>
-    <form action="/submit" method="post" enctype="multipart/form-data">
-      <!-- Text Inputs -->
-      <div class="form-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required />
-      </div>
-
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" />
-      </div>
-
-      <!-- Email & Password -->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-
-      <!-- Number -->
-      <div class="form-group">
-        <label for="experience">Years of Experience</label>
-        <input type="number" id="experience" name="experience" min="0" max="50" />
-      </div>
-
-      <!-- Range -->
-      <div class="form-group">
-        <label for="rating">Satisfaction Rating</label>
-        <input type="range" id="rating" name="rating" min="0" max="10" />
-      </div>
-
-      <!-- Date & Time -->
-      <div class="form-group">
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob" />
-      </div>
-
-      <div class="form-group">
-        <label for="appointment">Preferred Appointment Time</label>
-        <input type="time" id="appointment" name="appointment" />
-      </div>
-
-      <!-- Color Picker -->
-      <div class="form-group">
-        <label for="color">Favorite Color</label>
-        <input type="color" id="color" name="color" />
-      </div>
-
-      <!-- Specialty Select -->
-      <div class="form-group">
-        <label for="specialty">Specialty</label>
-        <select id="specialty" name="specialty">
-          <option value="">Select a specialty</option>
-          <option value="cardiology">Cardiology</option>
-          <option value="pediatrics">Pediatrics</option>
-          <option value="neurology">Neurology</option>
-          <option value="general">General Medicine</option>
-        </select>
-      </div>
-
-      <!-- Radio Buttons -->
-      <div class="form-group">
-        <label>Gender</label>
-        <div class="inline-group">
-          <label><input type="radio" name="gender" value="male" /> Male</label>
-          <label><input type="radio" name="gender" value="female" /> Female</label>
-          <label><input type="radio" name="gender" value="other" /> Other</label>
+    <h2>Soldier Registration</h2>
+    <form action="/submit" method="post">
+      
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
         </div>
-      </div>
-
-      <!-- Checkboxes -->
-      <div class="form-group">
-        <label>Languages Spoken</label>
-        <div class="inline-group">
-          <label><input type="checkbox" name="languages" value="english" /> English</label>
-          <label><input type="checkbox" name="languages" value="spanish" /> Spanish</label>
-          <label><input type="checkbox" name="languages" value="french" /> French</label>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
         </div>
-      </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="national_id">National ID</label>
+          <input type="text" id="national_id" name="national_id" required />
+        </div>
+      </fieldset>
 
-      <!-- File Upload -->
-      <div class="form-group">
-        <label for="license_upload">Upload License</label>
-        <input type="file" id="license_upload" name="license_upload" />
-      </div>
+      <!-- Military Details -->
+      <fieldset>
+        <legend>Military Details</legend>
+        <div class="form-group">
+          <label for="rank">Rank</label>
+          <select id="rank" name="rank" required>
+            <option value="">Select Rank</option>
+            <option value="private">Private</option>
+            <option value="corporal">Corporal</option>
+            <option value="sergeant">Sergeant</option>
+            <option value="lieutenant">Lieutenant</option>
+            <option value="captain">Captain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="unit">Unit</label>
+          <input type="text" id="unit" name="unit" required />
+        </div>
+        <div class="form-group">
+          <label for="enlist_date">Enlistment Date</label>
+          <input type="date" id="enlist_date" name="enlist_date" required />
+        </div>
+        <div class="form-group">
+          <label for="id_number">Service ID Number</label>
+          <input type="text" id="id_number" name="id_number" required />
+        </div>
+      </fieldset>
 
-      <!-- Hidden Field -->
-      <input type="hidden" name="user_type" value="doctor" />
+      <!-- Equipment Details -->
+      <fieldset>
+        <legend>Equipment Details</legend>
+        <div class="form-group checkbox-group">
+          <label><input type="checkbox" name="equipment" value="rifle" /> Rifle</label>
+          <label><input type="checkbox" name="equipment" value="helmet" /> Helmet</label>
+          <label><input type="checkbox" name="equipment" value="vest" /> Bulletproof Vest</label>
+          <label><input type="checkbox" name="equipment" value="radio" /> Radio</label>
+          <label><input type="checkbox" name="equipment" value="firstaid" /> First Aid Kit</label>
+        </div>
+        <div class="form-group">
+          <label for="equipment_serial">Equipment Serial Number(s)</label>
+          <input type="text" id="equipment_serial" name="equipment_serial" placeholder="List serials or asset tag numbers" />
+        </div>
+      </fieldset>
 
-      <!-- Textarea -->
-      <div class="form-group">
-        <label for="bio">Brief Bio</label>
-        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
-      </div>
+      <!-- Emergency Contact -->
+      <fieldset>
+        <legend>Emergency Contact</legend>
+        <div class="form-group">
+          <label for="emergency_name">Name</label>
+          <input type="text" id="emergency_name" name="emergency_name" required />
+        </div>
+        <div class="form-group">
+          <label for="relationship">Relationship</label>
+          <input type="text" id="relationship" name="relationship" required />
+        </div>
+        <div class="form-group">
+          <label for="emergency_phone">Phone Number</label>
+          <input type="tel" id="emergency_phone" name="emergency_phone" pattern="[0-9]{10}" required />
+        </div>
+      </fieldset>
 
       <!-- Submit -->
-      <button type="submit">Register Doctor</button>
+      <button type="submit">Register Soldier</button>
     </form>
   </div>
 
